@@ -1,4 +1,4 @@
-# Scheduling Demo API in Laravel 5.4
+# Scheduling App API Demo
 
 An Scheduling demo API to test Laravel 5.4 features and some architecture concepts.
 
