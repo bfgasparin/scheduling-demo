@@ -13,7 +13,7 @@ use Tests\Feature\API\ForSalonAdmin\CancelClientBookingsTest as BaseTestCase;
  * @see App\Salon\Client\Booking
  * @see App\Salon\Service
  */
-class CancelingClientBookingsTest extends BaseTestCase
+class CancelClientBookingsTest extends BaseTestCase
 {
     /**
      * The authGuard used to login the user booking the service
