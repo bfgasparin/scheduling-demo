@@ -143,7 +143,6 @@ system can be found into `config` directory.
 
 ## Routing<a name="routing"></a>
 
-There's is public and protected routes.
 All API routes can be found at `routes/api.php` file.
 
 The routes must as can as possible use the `Route::resource` helper
