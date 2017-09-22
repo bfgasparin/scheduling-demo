@@ -1,0 +1,63 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.4",
+        "bugsnag/bugsnag-laravel": "^2.0",
+        "laravel/framework": "5.4.*",
+        "laravel/tinker": "~1.0",
+        "nexmo/client": "@beta",
+        "predis/predis": "~1.0",
+        "propaganistas/laravel-phone": "^2.8",
+        "schuppo/password-strength": "~1.5",
+        "tymon/jwt-auth": "^1.0.0-beta.2"
+    },
+    "require-dev": {
+        "brianium/paratest": "^0.14.0",
+        "frequenc1/newage-ipsum": "@dev",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "files": [
+            "app/Support/helpers.php"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Faker\\": "faker/",
+            "UseCases\\": "database/seeds/UseCases/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<ruleset name="Ruleset for Laravel 5">
+    <description>
+        A Custom phpcs rule set for Laravel Project.
+        This ruleset follows PSR-2 coding standard, but without the Use ruleset.
+        This allow use PHP7 use group statements for PHP 7:
+        http://php.net/manual/fr/migration70.new-features.php#migration70.new-features.group-use-declarations
+
+        This feature is not complained by PSR2 standards, do until PSR group releases some arrata
+        to fix this, we need to crate this custom ruleset.
+    </description>
+ <arg name="tab-width" value="4"/>
+
+ <!-- Include the whole PSR-2 standard excluding the Use declaration-->
+ <rule ref="PSR2">
+    <exclude name="PSR2.Namespaces.UseDeclaration"/>
+</rule>
+
+<!--
+The following two tags are equivalent to the command line argument:
+    --ignore=*/tests/*,*/data/*
+-->
+ <exclude-pattern>*/tests/*</exclude-pattern>
+ <exclude-pattern>*/database/*</exclude-pattern>
+ <exclude-pattern>*/routes/*</exclude-pattern>
+</ruleset>
